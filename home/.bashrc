@@ -13,8 +13,8 @@ alias vim='nvim'
 alias activate='source .env/bin/activate'
 
 # Easy cd's
-alias airgo='cd acs/acs-ai/airgo'
-alias nt='cd acs/acs-ai/neural-twin'
+alias airgo='cd ~/acs/acs-ai/airgo'
+alias nt='cd ~/acs/acs-ai/neural-twin'
 
 # Go stuff
 export GOPATH=$HOME/go
