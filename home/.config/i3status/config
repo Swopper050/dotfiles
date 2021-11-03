@@ -15,6 +15,7 @@ order += "wireless _first_"
 order += "battery all"
 order += "disk /"
 order += "memory"
+order += "cpu_usage"
 order += "tztime local"
 
 
@@ -35,6 +36,10 @@ memory {
         format = "MEM usage -- %percentage_used"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
+}
+
+cpu_usage {
+        format = "CPU usage -- %usage"
 }
 
 tztime local {
