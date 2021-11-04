@@ -15,6 +15,7 @@ alias activate='source .env/bin/activate'
 # Easy cd's
 alias airgo='cd ~/acs/acs-ai/airgo'
 alias nt='cd ~/acs/acs-ai/neural-twin'
+alias cle='cd ~/acs/smarty/cle'
 
 # Go stuff
 export GOPATH=$HOME/go
