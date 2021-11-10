@@ -36,8 +36,15 @@ Plug 'dense-analysis/ale'
 Plug 'fatih/vim-go'
 
 " Typescript syntax
+Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+
+" Please fix typescript indent
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'branch': 'release/0.x'
+  \ }
 
 " CSS
 Plug 'styled-components/vim-styled-components'
@@ -94,4 +101,8 @@ noremap <leader>h <Esc>:bp<CR>
 noremap <leader>l <Esc>:bn<CR>
 " close buffer
 noremap <leader>j <Esc>:bd<CR>
+
+
+" javascript/typescript indenting
+autocmd FileType javascript,typscript,jsx,tsx setlocal shiftwidth=2 tabstop=2 softtabstop=0 expandtab
 
