@@ -5,7 +5,7 @@ Arch linux config
 
 First do everything from the guide up until the `pacstrap` command (and including the `pacstrap`. Then login with `arch-chroot`.
 
-# arch-chroot packages and stuff
+## `arch-chroot` packages and stuff
 
 ```sh
 ln -sf /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
@@ -29,7 +29,9 @@ pacman -S \
   os-prober \
   mtools \
   efibootmgr \
-  amd-ucode
+  amd-ucode \
+  libimobiledevice \  # iPhone USB tethering
+  ntfs-g3 \  # Dual boot windows
 
 # Check packages: sudo
 
@@ -43,3 +45,20 @@ grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
 cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
 grub-mkconfig -o /boot/grub/grub.conf
 ```
+
+## Default packages
+```sh
+sudo pacman -S \
+  bashcompletion \
+  docker \
+  git \
+  i3 \  # With i3-wm, not i3-gaps
+  xorg \
+  alacritty \
+```
+
+## AUR default packages
+```
+homeshick  # Following their docs!
+```
+
