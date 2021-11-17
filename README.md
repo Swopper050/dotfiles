@@ -64,6 +64,8 @@ sudo pacman -S \
   lightdm lightdm-gtk-greet \  # startup screen, don't forget to enable (systemctl)
   feh \  # for your cool background
   python python-pip \
+  network-manager-applet \
+  openvpn networkmanager-openvpn \
 ```
 
 ## AUR default packages
