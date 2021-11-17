@@ -55,6 +55,7 @@ sudo pacman -S \
   i3 \  # With i3-wm, not i3-gaps
   xorg \
   alacritty \
+  nvidia \  # But check video card
 ```
 
 ## AUR default packages
