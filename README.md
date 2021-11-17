@@ -59,10 +59,16 @@ sudo pacman -S \
   nvidia \  # But check video card
   firefox \
   nodejs npm \
+  pulseaudio \
+  alsa-utils \  # sound
+  lightdm lightdm-gtk-greet \  # startup screen, don't forget to enable (systemctl)
+  feh \  # for your cool background
+  python python-pip \
 ```
 
 ## AUR default packages
 ```
 homeshick  # Following their docs!
+spotify
 ```
 
