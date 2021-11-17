@@ -53,10 +53,12 @@ sudo pacman -S \
   docker \
   git \
   i3 \  # With i3-wm, not i3-gaps
+  dmenu \
   xorg xorg-xinit \
   alacritty \
   nvidia \  # But check video card
   firefox \
+  nodejs npm \
 ```
 
 ## AUR default packages
