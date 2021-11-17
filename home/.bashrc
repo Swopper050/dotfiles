@@ -11,13 +11,14 @@ PS1='[\u@\h \W]\$ '
 # Often used
 alias vim='nvim'
 alias activate='source .env/bin/activate'
-alias gs='flameshot gui'
+alias fs='flameshot gui'
 
 # Easy cd's
 alias airgo='cd ~/acs/acs-ai/airgo'
 alias nt='cd ~/acs/acs-ai/neural-twin'
 alias cle='cd ~/acs/smarty/cle'
 alias pm='cd ~/self/project-m'
+alias wdn='cd ~/self/watdenktnederland'
 
 # Go stuff
 export GOPATH=$HOME/go
