@@ -68,6 +68,7 @@ sudo pacman -S \
   openvpn networkmanager-openvpn \
   mysql \  # Needed for pip mysqlclient
   zip \
+  jq \  # json processing
 ```
 
 ## AUR default packages
