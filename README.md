@@ -67,6 +67,7 @@ sudo pacman -S \
   network-manager-applet \
   openvpn networkmanager-openvpn \
   mysql \  # Needed for pip mysqlclient
+  zip \
 ```
 
 ## AUR default packages
