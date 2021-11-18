@@ -60,7 +60,7 @@ sudo pacman -S \
   firefox \
   nodejs npm \
   pulseaudio \
-  alsa-utils \  # sound
+  alsa-utils asoundconf \  # sound
   lightdm lightdm-gtk-greet \  # startup screen, don't forget to enable (systemctl)
   feh \  # for your cool background
   python python-pip \
