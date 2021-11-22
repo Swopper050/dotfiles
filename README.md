@@ -69,6 +69,7 @@ sudo pacman -S \
   mysql \  # Needed for pip mysqlclient
   zip \
   jq \  # json processing
+  ntp \  # dateutils stuff
 ```
 
 ## AUR default packages
