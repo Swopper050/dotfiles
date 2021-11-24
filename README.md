@@ -53,14 +53,29 @@ sudo pacman -S \
   docker \
   git \
   i3 \  # With i3-wm, not i3-gaps
+  dmenu \
   xorg xorg-xinit \
   alacritty \
   nvidia \  # But check video card
   firefox \
+  nodejs npm \
+  pulseaudio \
+  alsa-utils asoundconf \  # sound
+  lightdm lightdm-gtk-greet \  # startup screen, don't forget to enable (systemctl)
+  feh \  # for your cool background
+  python python-pip \
+  network-manager-applet \
+  openvpn networkmanager-openvpn \
+  mysql \  # Needed for pip mysqlclient
+  zip \
+  ntp \  # dateutils stuff
+  unzip \
+  autorandr \  # xrandr settings saving and loading
 ```
 
 ## AUR default packages
 ```
 homeshick  # Following their docs!
+spotify
 ```
 
