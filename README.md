@@ -71,6 +71,7 @@ sudo pacman -S \
   ntp \  # dateutils stuff
   unzip \
   autorandr \  # xrandr settings saving and loading
+  dnsutils \
 ```
 
 ## AUR default packages
