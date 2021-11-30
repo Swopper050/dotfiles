@@ -78,6 +78,7 @@ sudo pacman -S \
   unzip \
   autorandr \  # xrandr settings saving and loading
   dnsutils \
+  flameshot \
 ```
 
 ## AUR default packages
