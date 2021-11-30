@@ -37,7 +37,7 @@ pacman -S \
   efibootmgr \
   amd-ucode \
   libimobiledevice \  # iPhone USB tethering
-  ntfs-g3 \  # Dual boot windows
+  ntfs-3g \  # Dual boot windows
 
 # Check packages: sudo
 
