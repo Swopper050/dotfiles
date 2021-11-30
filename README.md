@@ -7,12 +7,18 @@ First do everything from the guide up until the `pacstrap` command (and includin
 
 ## `arch-chroot` packages and stuff
 
+Create user and add to sudo group!
+
 ```sh
 ln -sf /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
 hwclock --systohc
 pacman -S neovim
 # Update /etc/locale.gen
 locale-gen
+
+useradd -m -g users -G wheel bram
+passwd bram
+EDITOR=nvim visudo
 
 pacman -S \
   linux \
