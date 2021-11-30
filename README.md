@@ -55,7 +55,7 @@ grub-mkconfig -o /boot/grub/grub.conf
 ## Default packages
 ```sh
 sudo pacman -S \
-  bashcompletion \
+  bash-completion \
   docker \
   git \
   i3 \  # With i3-wm, not i3-gaps
@@ -67,7 +67,7 @@ sudo pacman -S \
   nodejs npm \
   pulseaudio \
   alsa-utils asoundconf \  # sound
-  lightdm lightdm-gtk-greet \  # startup screen, don't forget to enable (systemctl)
+  lightdm lightdm-gtk-greeter \  # startup screen, don't forget to enable (systemctl)
   feh \  # for your cool background
   python python-pip \
   network-manager-applet \
