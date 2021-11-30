@@ -82,7 +82,7 @@ sudo pacman -S \
 
 ## AUR default packages
 ```
-homeshick  # Following their docs!
+homeshick  # Follow their docs!
 spotify
 ```
 
