@@ -79,6 +79,7 @@ sudo pacman -S \
   autorandr \  # xrandr settings saving and loading
   dnsutils \
   flameshot \
+  wireshark-cli \
 ```
 
 ## AUR default packages
