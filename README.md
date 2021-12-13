@@ -69,7 +69,7 @@ sudo pacman -S \
   alsa-utils asoundconf \  # sound
   lightdm lightdm-gtk-greeter \  # startup screen, don't forget to enable (systemctl)
   feh \  # for your cool background
-  python python-pip \
+  python python-pip tk \
   network-manager-applet \
   openvpn networkmanager-openvpn \
   mysql \  # Needed for pip mysqlclient
