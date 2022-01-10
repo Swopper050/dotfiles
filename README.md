@@ -7,12 +7,18 @@ First do everything from the guide up until the `pacstrap` command (and includin
 
 ## `arch-chroot` packages and stuff
 
+Create user and add to sudo group!
+
 ```sh
 ln -sf /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
 hwclock --systohc
 pacman -S neovim
 # Update /etc/locale.gen
 locale-gen
+
+useradd -m -g users -G wheel bram
+passwd bram
+EDITOR=nvim visudo
 
 pacman -S \
   linux \
@@ -31,7 +37,7 @@ pacman -S \
   efibootmgr \
   amd-ucode \
   libimobiledevice \  # iPhone USB tethering
-  ntfs-g3 \  # Dual boot windows
+  ntfs-3g \  # Dual boot windows
 
 # Check packages: sudo
 
@@ -49,7 +55,7 @@ grub-mkconfig -o /boot/grub/grub.conf
 ## Default packages
 ```sh
 sudo pacman -S \
-  bashcompletion \
+  bash-completion \
   docker \
   git \
   i3 \  # With i3-wm, not i3-gaps
@@ -61,9 +67,9 @@ sudo pacman -S \
   nodejs npm \
   pulseaudio \
   alsa-utils asoundconf \  # sound
-  lightdm lightdm-gtk-greet \  # startup screen, don't forget to enable (systemctl)
+  lightdm lightdm-gtk-greeter \  # startup screen, don't forget to enable (systemctl)
   feh \  # for your cool background
-  python python-pip \
+  python python-pip tk \
   network-manager-applet \
   openvpn networkmanager-openvpn \
   mysql \  # Needed for pip mysqlclient
@@ -71,11 +77,14 @@ sudo pacman -S \
   ntp \  # dateutils stuff
   unzip \
   autorandr \  # xrandr settings saving and loading
+  dnsutils \
+  flameshot \
+  wireshark-cli \
 ```
 
 ## AUR default packages
 ```
-homeshick  # Following their docs!
+homeshick  # Follow their docs!
 spotify
 ```
 

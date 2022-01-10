@@ -5,6 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export TERM=xterm-256color ssh
+
 alias ls='ls --color=auto -al'
 PS1='[\u@\h \W]\$ '
 
