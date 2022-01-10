@@ -15,7 +15,7 @@ alias fs='flameshot gui'
 
 # Easy cd's
 alias airgo='cd ~/acs/acs-ai/airgo'
-alias nt='cd ~/acs/acs-ai/neural-twin'
+alias ares='cd ~/acs/mijnbaopt/ares'
 alias cle='cd ~/acs/smarty/cle'
 alias pm='cd ~/self/project-m'
 alias wdn='cd ~/self/watdenktnederland'
