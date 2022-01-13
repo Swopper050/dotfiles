@@ -16,9 +16,9 @@ alias activate='source .env/bin/activate'
 alias fs='flameshot gui'
 
 # Easy cd's
-alias airgo='cd ~/acs/acs-ai/airgo'
 alias ares='cd ~/acs/mijnbaopt/ares'
-alias cle='cd ~/acs/smarty/cle'
+alias airgo='cd ~/acs/smartbase/software/core/airgo'
+alias cle='cd ~/acs/smartbase/software/services/cle'
 alias pm='cd ~/self/project-m'
 alias wdn='cd ~/self/watdenktnederland'
 
