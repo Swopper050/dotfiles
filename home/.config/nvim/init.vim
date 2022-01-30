@@ -9,7 +9,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Commenting
 Plug 'preservim/nerdcommenter'
 
-" Object motions for python
+" Object motions for python, easy navigation in python
 Plug 'jeetsukumaran/vim-pythonsense'
 
 " Python identation done according to pep8
@@ -49,7 +49,20 @@ Plug 'prettier/vim-prettier', {
 " CSS
 Plug 'styled-components/vim-styled-components'
 
+" Git stuff
+Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
+
+" Find and replace
+Plug 'brooth/far.vim'
+
 call plug#end()
+
+
+" Lua plugin configs
+lua <<EOF
+require 'plugins.gitsigns'
+EOF
 
 
 " Random configuration
