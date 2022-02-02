@@ -21,6 +21,10 @@ alias airgo='cd ~/acs/smartbase/software/core/airgo'
 alias cle='cd ~/acs/smartbase/software/services/cle'
 alias pm='cd ~/self/project-m'
 alias wdn='cd ~/self/watdenktnederland'
+alias api='cd ~/acs/mijnbaopt/api'
+alias core='cd ~/acs/mijnbaopt/core'
+alias ui='cd ~/acs/mijnbaopt/ui'
+alias tasks='cd ~/acs/mijnbaopt/tasks'
 
 # Go stuff
 export GOPATH=$HOME/go

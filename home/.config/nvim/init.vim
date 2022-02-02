@@ -18,6 +18,9 @@ Plug 'Vimjas/vim-python-pep8-indent'
 " Python syntax highlighting
 Plug 'vim-python/python-syntax'
 
+" Handlebars syntax
+Plug 'nono/vim-handlebars'
+
 " Custom snippets
 Plug 'sirver/ultisnips'
 
