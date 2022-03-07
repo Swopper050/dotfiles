@@ -59,6 +59,9 @@ Plug 'lewis6991/gitsigns.nvim'
 " Find and replace
 Plug 'brooth/far.vim'
 
+" Track code activity
+Plug 'wakatime/vim-wakatime'
+
 call plug#end()
 
 
