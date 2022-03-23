@@ -27,8 +27,7 @@ alias ui='cd ~/acs/mijnbaopt/ui'
 alias tasks='cd ~/acs/mijnbaopt/tasks'
 
 # Go stuff
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
