@@ -80,6 +80,8 @@ sudo pacman -S \
   dnsutils \
   flameshot \
   wireshark-cli \
+  cmake \
+  protobuf \
 ```
 
 ## AUR default packages
