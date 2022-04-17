@@ -86,7 +86,8 @@ sudo pacman -S \
 
 ## AUR default packages
 ```
-homeshick  # Follow their docs!
+homeshick  # follow their docs!
 spotify
+rtl88x2bu-dkms-git  # for realtek usb wifi adapter
 ```
 
