@@ -25,9 +25,14 @@ alias api='cd ~/acs/mijnbaopt/api'
 alias core='cd ~/acs/mijnbaopt/core'
 alias ui='cd ~/acs/mijnbaopt/ui'
 alias tasks='cd ~/acs/mijnbaopt/tasks'
+alias zeus='cd ~/acs/mijnbaopt/zeus'
+alias gaia='cd ~/acs/mijnbaopt/gaia'
 
 # Go stuff
-export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
+
+export PATH=$PATH:/opt/cuda/bin
