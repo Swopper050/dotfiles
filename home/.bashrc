@@ -13,6 +13,7 @@ PS1='[\u@\h \W]\$ '
 # Often used
 alias vim='nvim'
 alias activate='source .env/bin/activate'
+alias makeenv='python -m venv .env && activate && pip install jedi neovim'
 alias fs='flameshot gui'
 
 # Easy cd's
@@ -29,6 +30,7 @@ alias zeus='cd ~/acs/mijnbaopt/zeus'
 alias gaia='cd ~/acs/mijnbaopt/gaia'
 
 # Go stuff
+# export GOROOT=$HOME/sdk/go1.18beta2
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
