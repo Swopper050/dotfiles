@@ -38,3 +38,6 @@ source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
 export PATH=$PATH:/opt/cuda/bin
+
+# History control; commands starting with a space will not be stored.
+export HISTCONTROL=ignorespace

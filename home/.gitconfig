@@ -3,3 +3,5 @@
 	name = Swopper050
 [core]
 	editor = nvim
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com/
