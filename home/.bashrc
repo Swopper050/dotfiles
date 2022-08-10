@@ -29,6 +29,8 @@ alias tasks='cd ~/acs/mijnbaopt/tasks'
 alias zeus='cd ~/acs/mijnbaopt/zeus'
 alias gaia='cd ~/acs/mijnbaopt/gaia'
 
+alias dfl='cd ~/self/kaggle-dfl'
+
 # Go stuff
 # export GOROOT=$HOME/sdk/go1.18beta2
 export GOPATH=$HOME/go
