@@ -89,5 +89,6 @@ sudo pacman -S \
 homeshick  # follow their docs!
 spotify
 rtl88x2bu-dkms-git  # for realtek usb wifi adapter
+nvm  # node version manager
 ```
 
