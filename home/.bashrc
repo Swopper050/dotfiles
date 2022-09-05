@@ -38,3 +38,4 @@ source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
 export PATH=$PATH:/opt/cuda/bin
+source /usr/share/nvm/init-nvm.sh
