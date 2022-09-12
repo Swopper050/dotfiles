@@ -13,7 +13,7 @@ PS1='[\u@\h \W]\$ '
 # Often used
 alias vim='nvim'
 alias activate='source .env/bin/activate'
-alias makeenv='python -m venv .env && activate && pip install jedi neovim'
+alias makeenv='python -m venv .env && activate'
 alias fs='flameshot gui'
 
 # Easy cd's
