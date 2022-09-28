@@ -38,7 +38,6 @@ source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
 export PATH=$PATH:/opt/cuda/bin
-source /usr/share/nvm/init-nvm.sh
 
 # History control; commands starting with a space will not be stored.
 export HISTCONTROL=ignorespace
