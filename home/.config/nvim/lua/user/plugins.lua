@@ -88,6 +88,9 @@ local function plugins(use)
 		run = ":TSUpdate",
 	})
 
+        -- gitsigns
+        use('lewis6991/gitsigns.nvim')
+
 	if packer_bootstrap then
 		print("Restart Neovim required after installation!")
 		require("packer").sync()
