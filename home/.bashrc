@@ -42,3 +42,6 @@ export PATH=$PATH:/opt/cuda/bin
 
 # History control; commands starting with a space will not be stored.
 export HISTCONTROL=ignorespace
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

@@ -193,4 +193,4 @@ bar {
         }
 }
 
-exec_always autorandr --change; feh --bg-fill ~/documents/wallpapers/witcher_wallpaper.jpg --no-fehbg
+exec_always autorandr home; feh --bg-fill ~/documents/wallpapers/witcher_wallpaper.jpg --no-fehbg
