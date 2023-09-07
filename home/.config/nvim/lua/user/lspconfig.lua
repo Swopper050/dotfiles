@@ -60,7 +60,7 @@ local function format_on_save(bufnr)
 	vim.api.nvim_create_augroup("auto_format", { clear = true })
 	vim.api.nvim_create_autocmd("BufWritePre", {
 		callback = function()
-			vim.lsp.buf.formatting_sync(nil, 2000)
+			vim.lsp.buf.format(nil, 2000)
 		end,
 		buffer = bufnr,
 	})

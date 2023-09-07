@@ -28,12 +28,11 @@ alias ui='cd ~/acs/mijnbaopt/ui'
 alias tasks='cd ~/acs/mijnbaopt/tasks'
 alias zeus='cd ~/acs/mijnbaopt/zeus'
 alias gaia='cd ~/acs/mijnbaopt/gaia'
+alias gonnx='cd ~/self/gonnx'
 
 # Go stuff
-# export GOROOT=$HOME/sdk/go1.18beta2
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
+alias go='go1.19.12'
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
