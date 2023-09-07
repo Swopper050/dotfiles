@@ -13,7 +13,7 @@ PS1='[\u@\h \W]\$ '
 # Often used
 alias vim='nvim'
 alias activate='source .env/bin/activate'
-alias makeenv='python -m venv .env && activate && pip install jedi neovim'
+alias makeenv='python -m venv .env && activate && pip install pyright'
 alias fs='flameshot gui'
 
 # Easy cd's
@@ -28,17 +28,19 @@ alias ui='cd ~/acs/mijnbaopt/ui'
 alias tasks='cd ~/acs/mijnbaopt/tasks'
 alias zeus='cd ~/acs/mijnbaopt/zeus'
 alias gaia='cd ~/acs/mijnbaopt/gaia'
+alias gonnx='cd ~/self/gonnx'
 
 # Go stuff
-# export GOROOT=$HOME/sdk/go1.18beta2
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
+alias go='go1.19.12'
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
 export PATH=$PATH:/opt/cuda/bin
-source /usr/share/nvm/init-nvm.sh
 
 # History control; commands starting with a space will not be stored.
 export HISTCONTROL=ignorespace
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
