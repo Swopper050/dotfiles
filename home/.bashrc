@@ -32,7 +32,6 @@ alias gonnx='cd ~/self/gonnx'
 
 # Go stuff
 export PATH=$PATH:/usr/local/go/bin
-alias go='go1.19.12'
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
