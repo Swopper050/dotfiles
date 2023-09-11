@@ -7,7 +7,12 @@ end
 local function setup()
     gruvbox.setup({
         contrast = "soft",
-        italic = false,
+        italic = {
+            strings = false,
+            comments = false,
+            operators = false,
+            folds = false,
+        },
     })
 
     vim.o.background = "dark" -- or "light" for light mode
