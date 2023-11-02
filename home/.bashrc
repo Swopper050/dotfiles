@@ -31,7 +31,8 @@ alias gaia='cd ~/acs/mijnbaopt/gaia'
 alias gonnx='cd ~/self/gonnx'
 
 # Go stuff
-export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
