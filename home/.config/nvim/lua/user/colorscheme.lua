@@ -9,10 +9,10 @@ local function setup()
         contrast = "soft",
         italic = {
             strings = false,
-            emphasis = true,
+            emphasis = false,
             comments = false,
             operators = false,
-            folds = true,
+            folds = false,
         },
     })
 
