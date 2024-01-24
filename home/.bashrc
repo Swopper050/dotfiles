@@ -17,17 +17,14 @@ alias makeenv='python -m venv .env && activate && pip install pyright'
 alias fs='flameshot gui'
 
 # Easy cd's
-alias ares='cd ~/acs/mijnbaopt/ares'
-alias airgo='cd ~/acs/smartbase/software/core/airgo'
-alias cle='cd ~/acs/smartbase/software/services/cle'
-alias pm='cd ~/self/project-m'
-alias wdn='cd ~/self/watdenktnederland'
-alias api='cd ~/acs/mijnbaopt/api'
-alias core='cd ~/acs/mijnbaopt/core'
-alias ui='cd ~/acs/mijnbaopt/ui'
-alias tasks='cd ~/acs/mijnbaopt/tasks'
-alias zeus='cd ~/acs/mijnbaopt/zeus'
-alias gaia='cd ~/acs/mijnbaopt/gaia'
+alias ares='cd ~/acs/climatics/climatics/python/ares'
+alias aule='cd ~/acs/smartbase/software/services/cle'
+alias api='cd ~/acs/climatics/climatics/python/api'
+alias core='cd ~/acs/climatics/climatics/python/core'
+alias ui='cd ~/acs/climatics/climatics/python/ui'
+alias tasks='cd ~/acs/climatics/climatics/python/tasks'
+alias zeus='cd ~/acs/climatics/climatics/python/zeus'
+alias gaia='cd ~/acs/climatics/climatics/python/gaia'
 alias gonnx='cd ~/self/gonnx'
 
 # Go stuff
@@ -48,3 +45,4 @@ export HISTCONTROL=ignorespace
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+source /usr/share/nvm/init-nvm.sh
