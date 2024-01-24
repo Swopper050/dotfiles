@@ -37,6 +37,10 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
+# Dotnet stuff
+export PATH=$PATH:$HOME/.dotnet/tools
+
+
 export PATH=$PATH:/opt/cuda/bin
 
 # History control; commands starting with a space will not be stored.
