@@ -12,6 +12,8 @@ end
 
 local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+vim.g.python3_host_prog = "$HOME" .. "/.pyenv/versions/nvim/bin/python3"
+
 local config = {
 	float = {
 		focusable = true,
@@ -95,6 +97,12 @@ local function setup_pyright()
     })
 end
 
+local function setup_ruff_lsp()
+    lspconfig.ruff_lsp.setup{
+        capabilities = capabilities,
+    }
+end
+
 
 local function setup_tsserver()
 	lspconfig.tsserver.setup({
@@ -130,6 +138,7 @@ local function setup()
         setup_signs()
 	setup_gopls()
         setup_pyright()
+        setup_ruff_lsp()
 	setup_tsserver()
 end
 
