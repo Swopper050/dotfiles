@@ -91,6 +91,17 @@ local function plugins(use)
         -- gitsigns
         use('lewis6991/gitsigns.nvim')
 
+        -- neo-tree
+        use({
+            "nvim-neo-tree/neo-tree.nvim",
+            branch = "v3.x",
+            requires = { 
+                "nvim-lua/plenary.nvim",
+                "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+                "MunifTanjim/nui.nvim",
+            }
+        })
+
 	if packer_bootstrap then
 		print("Restart Neovim required after installation!")
 		require("packer").sync()

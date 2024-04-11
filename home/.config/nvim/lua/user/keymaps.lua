@@ -58,10 +58,15 @@ local function setup_lsp_keymaps()
 	keymap("n", "<leader>q", commands.lsp.loclist, options)
 end
 
+local function setup_neotree_keymaps()
+	keymap("n", "<leader>t", ":Neotree <CR>", options)
+end
+
 local function setup()
 	setup_default_keymaps()
 	setup_telescope_keymaps()
 	setup_lsp_keymaps()
+        setup_neotree_keymaps()
 end
 
 return {
