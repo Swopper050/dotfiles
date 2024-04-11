@@ -59,7 +59,7 @@ local function setup_lsp_keymaps()
 end
 
 local function setup_neotree_keymaps()
-	keymap("n", "<leader>t", ":Neotree <CR>", options)
+	keymap("n", "<leader>t", ":Neotree reveal=true <CR>", options)
 end
 
 local function setup()
