@@ -102,6 +102,19 @@ local function plugins(use)
             }
         })
 
+        -- codeium
+        use({
+            "Exafunction/codeium.nvim",
+            requires= {
+                "nvim-lua/plenary.nvim",
+                "hrsh7th/nvim-cmp",
+                "onsails/lspkind.nvim",
+            },
+        })
+
+        -- copilot
+        use("zbirenbaum/copilot.lua")
+
 	if packer_bootstrap then
 		print("Restart Neovim required after installation!")
 		require("packer").sync()

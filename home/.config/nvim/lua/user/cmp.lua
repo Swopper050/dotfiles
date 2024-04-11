@@ -67,12 +67,13 @@ local function expand(args)
 end
 
 local function format(entry, vim_item)
+        vim_item.abbr = string.sub(vim_item.abbr, 1, 50)
 	vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 	vim_item.menu = ({
 		nvim_lsp = "[Lsp]",
-		luasnip = "[Snippet]",
 		buffer = "[Buffer]",
 		path = "[Path]",
+                codeium = "[Codeium]",
 	})[entry.source.name]
 
 	return vim_item
@@ -83,7 +84,6 @@ local function setup()
 		snippet = {
 			expand = expand,
 		},
-
 		mapping = {
 			["<C-k>"] = cmp.mapping.select_prev_item(),
 			["<C-j>"] = cmp.mapping.select_next_item(),
@@ -95,28 +95,37 @@ local function setup()
 			["<Tab>"] = cmp.mapping(tab_next, { "i", "s" }),
 			["<S-Tab>"] = cmp.mapping(tab_prev, { "i", "s" }),
 		},
-
 		formatting = {
 			fields = { "kind", "abbr", "menu" },
-			format = format,
+			format = require('lspkind').cmp_format({
+                            mode = "symbol",
+                            maxwidth = 50,
+                            ellipsis_char = '...',
+                            symbol_map = {
+                                Codeium = "[Codium]",
+                                nvim_lsp = "[Lsp]",
+                                buffer = "[Buffer]",
+                                path = "[Path]",
+                            },
+                        }),
 		},
-
 		sources = {
 			{ name = "nvim_lsp" },
-			{ name = "luasnip" },
-			{ name = "buffer" },
+                        { name = "codeium" },
 			{ name = "path" },
+			{ name = "buffer" },
 		},
-
 		confirm_opts = {
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = false,
 		},
-
 		window = {
 			completion = cmp.config.window.bordered(),
 			documentation = cmp.config.window.bordered(),
 		},
+                experimental = {
+                    ghost_text = true,
+                },
 	})
 end
 

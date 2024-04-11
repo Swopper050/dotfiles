@@ -21,11 +21,7 @@ alias ares='cd ~/acs/climatics/climatics/python/ares'
 alias aule='cd ~/acs/smartbase/software/services/cle'
 alias api='cd ~/acs/climatics/climatics/python/api'
 alias core='cd ~/acs/climatics/climatics/python/core'
-<<<<<<< Updated upstream
-alias ui='cd ~/acs/climatics/climatics/ui/main/'
-=======
 alias ui='cd ~/acs/climatics/climatics/ui/main'
->>>>>>> Stashed changes
 alias tasks='cd ~/acs/climatics/climatics/python/tasks'
 alias zeus='cd ~/acs/climatics/climatics/python/zeus'
 alias gaia='cd ~/acs/climatics/climatics/python/gaia'
