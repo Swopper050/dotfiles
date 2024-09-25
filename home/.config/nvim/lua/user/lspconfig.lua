@@ -104,8 +104,8 @@ local function setup_ruff_lsp()
 end
 
 
-local function setup_tsserver()
-	lspconfig.tsserver.setup({
+local function setup_ts_ls()
+	lspconfig.ts_ls.setup({
 		capabilities = capabilities,
 		on_attach = function(client, bufnr)
 			-- disable document formatting because null-ls takes care of this.
@@ -139,7 +139,7 @@ local function setup()
 	setup_gopls()
         setup_pyright()
         setup_ruff_lsp()
-	setup_tsserver()
+	setup_ts_ls()
 end
 
 return {

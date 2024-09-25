@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/bram/.cache/nvim/packer_hererocks/2.1.1702233742/share/lua/5.1/?.lua;/home/bram/.cache/nvim/packer_hererocks/2.1.1702233742/share/lua/5.1/?/init.lua;/home/bram/.cache/nvim/packer_hererocks/2.1.1702233742/lib/luarocks/rocks-5.1/?.lua;/home/bram/.cache/nvim/packer_hererocks/2.1.1702233742/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/bram/.cache/nvim/packer_hererocks/2.1.1702233742/lib/lua/5.1/?.so"
+local package_path_str = "/home/bram/.cache/nvim/packer_hererocks/2.1.1716656478/share/lua/5.1/?.lua;/home/bram/.cache/nvim/packer_hererocks/2.1.1716656478/share/lua/5.1/?/init.lua;/home/bram/.cache/nvim/packer_hererocks/2.1.1716656478/lib/luarocks/rocks-5.1/?.lua;/home/bram/.cache/nvim/packer_hererocks/2.1.1716656478/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/bram/.cache/nvim/packer_hererocks/2.1.1716656478/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -109,6 +109,16 @@ _G.packer_plugins = {
     path = "/home/bram/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["codeium.nvim"] = {
+    loaded = true,
+    path = "/home/bram/.local/share/nvim/site/pack/packer/start/codeium.nvim",
+    url = "https://github.com/Exafunction/codeium.nvim"
+  },
+  ["copilot.lua"] = {
+    loaded = true,
+    path = "/home/bram/.local/share/nvim/site/pack/packer/start/copilot.lua",
+    url = "https://github.com/zbirenbaum/copilot.lua"
+  },
   ["dressing.nvim"] = {
     loaded = true,
     path = "/home/bram/.local/share/nvim/site/pack/packer/start/dressing.nvim",
@@ -134,6 +144,11 @@ _G.packer_plugins = {
     path = "/home/bram/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/home/bram/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/bram/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -144,10 +159,20 @@ _G.packer_plugins = {
     path = "/home/bram/.local/share/nvim/site/pack/packer/start/material.nvim",
     url = "https://github.com/marko-cerovac/material.nvim"
   },
+  ["neo-tree.nvim"] = {
+    loaded = true,
+    path = "/home/bram/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
+    url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
+  },
   nerdcommenter = {
     loaded = true,
     path = "/home/bram/.local/share/nvim/site/pack/packer/start/nerdcommenter",
     url = "https://github.com/scrooloose/nerdcommenter"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/home/bram/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
