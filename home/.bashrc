@@ -27,8 +27,6 @@ alias zeus='cd ~/acs/climatics/climatics/python/zeus'
 alias gaia='cd ~/acs/climatics/climatics/python/gaia'
 alias gonnx='cd ~/self/gonnx'
 
-export BROWSER=firefox
-
 # Go stuff
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
