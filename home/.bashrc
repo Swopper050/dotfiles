@@ -11,7 +11,7 @@ alias ls='ls --color=auto -al'
 PS1='[\u@\h \W]\$ '
 
 # Often used
-alias vim='pyenv shell $(pyenv local); nvim'
+alias vim='nvim'
 alias activate='source .env/bin/activate'
 alias makeenv='python -m venv .env && activate && pip install pyright'
 alias fs='flameshot gui'
@@ -31,6 +31,7 @@ alias gonnx='cd ~/self/gonnx'
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
+# Homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
@@ -42,7 +43,5 @@ export PATH=$PATH:/opt/cuda/bin
 
 # History control; commands starting with a space will not be stored.
 export HISTCONTROL=ignorespace
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+
 source /usr/share/nvm/init-nvm.sh

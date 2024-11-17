@@ -14,6 +14,7 @@ general {
 order += "wireless _first_"
 order += "battery all"
 order += "disk /"
+order += "disk /home"
 order += "memory"
 order += "cpu_usage"
 order += "tztime local"
@@ -25,11 +26,16 @@ wireless _first_ {
 }
 
 battery all {
+        path = /sys/class/power_supply/CMB%d/uevent
         format = "%status %percentage"
 }
 
-disk "/" {
-        format = "Disk available -- %avail"
+disk / {
+        format = "Root disk available -- %avail"
+}
+
+disk /home {
+        format = "Home disk available -- %avail"
 }
 
 memory {

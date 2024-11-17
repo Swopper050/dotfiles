@@ -25,6 +25,7 @@ local commands = {
 		file_finder = "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ previewer = false })) <cr>",
 		grep = "<cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_dropdown({ previewer = false })) <cr>",
 		git_commits = "<cmd>lua require('telescope.builtin').git_commits(require('telescope.themes').get_dropdown({ previewer = false })) <cr>",
+		colorscheme = "<cmd>lua require('telescope.builtin').colorscheme(require('telescope.themes').get_dropdown({ previewer = true})) <cr>",
 	},
 }
 
@@ -42,7 +43,7 @@ local function setup_default_keymaps()
 	keymap("n", "<leader>j", ":bd<CR>", options)
 	keymap("n", "<CR>", ":w <CR>", options)
 	keymap("n", "<leader>q", ":q <CR>", options)
-	keymap("n", "<leader>k", commands.ui.toggle_color, options)
+	keymap("n", "<leader>k", commands.telescope.colorscheme, options)
 end
 
 local function setup_lsp_keymaps()
