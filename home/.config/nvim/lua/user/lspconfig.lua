@@ -97,8 +97,8 @@ local function setup_pyright()
     })
 end
 
-local function setup_ruff_lsp()
-    lspconfig.ruff_lsp.setup{
+local function setup_ruff()
+    lspconfig.ruff.setup{
         capabilities = capabilities,
     }
 end
@@ -138,7 +138,7 @@ local function setup()
         setup_signs()
 	setup_gopls()
         setup_pyright()
-        setup_ruff_lsp()
+        setup_ruff()
 	setup_ts_ls()
 end
 
