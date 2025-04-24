@@ -13,10 +13,10 @@ local function setup()
 		sources = {
 			formatting.stylua,
 			formatting.prettier,
-			formatting.eslint_d,
 			formatting.goimports,
 			formatting.gofumpt,
-			diagnostics.eslint_d,
+                        require("none-ls.formatting.eslint_d"),
+                        require("none-ls.diagnostics.eslint_d"),
 			diagnostics.stylelint,
 			diagnostics.golangci_lint.with({
 				args = {

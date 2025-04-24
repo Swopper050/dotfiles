@@ -77,7 +77,8 @@ local function plugins(use)
 
 	-- lsp setup
 	use("neovim/nvim-lspconfig")
-	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+	use("nvimtools/none-ls.nvim") -- for formatters and linters
+	use("nvimtools/none-ls-extras.nvim") -- for builtin sources and config
 
 	-- telescope
 	use("nvim-telescope/telescope.nvim")
