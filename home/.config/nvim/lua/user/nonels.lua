@@ -30,6 +30,24 @@ local function setup()
 				},
 			}),
 		},
+                on_attach = function(client, bufnr)
+                    if client.supports_method("textDocument/formatting") then
+                        local group = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
+	                vim.api.nvim_create_autocmd("BufWritePre", {
+	                	group = group,
+	                	buffer = bufnr,
+	                	callback = function()
+	                		vim.lsp.buf.format({
+	                			bufnr = bufnr,
+	                			filter = function(format_client)
+	                				-- only use none-ls for formatting
+	                				return format_client.name == "null-ls" or format_client.name == "none-ls"
+	                			end,
+	                		})
+	                	end,
+	                })
+                    end
+		end,
 	})
 end
 
