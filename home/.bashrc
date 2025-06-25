@@ -17,14 +17,10 @@ alias makeenv='python -m venv .env && activate && pip install pyright'
 alias fs='flameshot gui'
 
 # Easy cd's
-alias ares='cd ~/acs/climatics/climatics/python/ares'
-alias aule='cd ~/acs/smartbase/software/services/cle'
-alias api='cd ~/acs/climatics/climatics/python/api'
-alias core='cd ~/acs/climatics/climatics/python/core'
-alias ui='cd ~/acs/climatics/climatics/ui/main'
-alias tasks='cd ~/acs/climatics/climatics/python/tasks'
-alias zeus='cd ~/acs/climatics/climatics/python/zeus'
-alias gaia='cd ~/acs/climatics/climatics/python/gaia'
+alias ktg='cd ~/applyai/vemc/ktg-demo'
+alias panel='cd ~/applyai/csg/sgog-panel'
+alias v3='cd ~/applyai/vemc/stakeholder-journey-v3'
+alias solid='cd ~/self/solid-flask-web-app-template'
 alias gonnx='cd ~/self/gonnx'
 
 # Go stuff

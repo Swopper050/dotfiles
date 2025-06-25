@@ -193,4 +193,7 @@ bar {
         }
 }
 
+bindsym $mod+Control+l exec "light-locker-command -l"
+exec --no-startup-id xautolock -time 2 -locker "light-locker-command -l"
+
 exec_always autorandr home; feh --bg-fill ~/documents/wallpapers/wallpaper.jpg --no-fehbg
