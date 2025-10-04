@@ -17,6 +17,9 @@ local function setup()
 			formatting.gofumpt,
                         require("none-ls.formatting.eslint_d"),
                         require("none-ls.diagnostics.eslint_d"),
+                        require("none-ls.formatting.ruff"),
+                        require("none-ls.formatting.ruff_format"),
+                        require("none-ls.diagnostics.ruff"),
 			diagnostics.stylelint,
 			diagnostics.golangci_lint.with({
 				args = {
@@ -47,7 +50,21 @@ local function setup()
 	                	end,
 	                })
                     end
-		end,
+
+                    -- Add code action (for ruff fixes) on save for Python files
+                    if vim.bo[bufnr].filetype == "python" then
+                        vim.api.nvim_create_autocmd("BufWritePre", {
+                            group = group,
+                            buffer = bufnr,
+                            callback = function()
+                                vim.lsp.buf.code_action({
+                                    context = { only = { "source.fixAll.ruff" } },
+                                    apply = true,
+                                })
+                            end,
+                        })
+		    end
+                end,
 	})
 end
 

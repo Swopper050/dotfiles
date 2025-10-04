@@ -84,8 +84,6 @@ local function setup_pyright()
 		on_attach = function(client, bufnr)
 			client.server_capabilities.document_formatting = false
 			client.server_capabilities.document_range_formatting = false
-
-			format_on_save(bufnr)
 			highlight_document(bufnr)
 		end,
     })
