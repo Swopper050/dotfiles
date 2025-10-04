@@ -4,12 +4,6 @@ if not ok then
 	return
 end
 
-local ok, lspconfig = pcall(require, "lspconfig")
-if not ok then
-	vim.notify("nvim-lsp-config not found, make sure it is installed.")
-	return
-end
-
 local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 vim.g.python3_host_prog = "$HOME" .. "/.pyenv/versions/nvim/bin/python3"
@@ -70,7 +64,7 @@ end
 
 
 local function setup_gopls()
-	lspconfig.gopls.setup({
+	vim.lsp.enable('gopls', {
 		capabilities = capabilities,
 		on_attach = function(client, bufnr)
 			-- disable document formatting because null-ls takes care of this.
@@ -85,7 +79,7 @@ local function setup_gopls()
 end
 
 local function setup_pyright() 
-    lspconfig.pyright.setup({
+    vim.lsp.enable('pyright', {
 		capabilities = capabilities,
 		on_attach = function(client, bufnr)
 			client.server_capabilities.document_formatting = false
@@ -98,14 +92,14 @@ local function setup_pyright()
 end
 
 local function setup_ruff()
-    lspconfig.ruff.setup{
+    vim.lsp.enable('ruff', {
         capabilities = capabilities,
-    }
+    })
 end
 
 
 local function setup_ts_ls()
-	lspconfig.ts_ls.setup({
+	vim.lsp.enable('ts_ls', {
 		capabilities = capabilities,
 		on_attach = function(client, bufnr)
 			-- disable document formatting because null-ls takes care of this.

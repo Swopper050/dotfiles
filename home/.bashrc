@@ -17,6 +17,7 @@ alias makeenv='python -m venv .env && activate && pip install pyright'
 alias fs='flameshot gui'
 
 # Easy cd's
+alias wiseflix='cd ~/applyai/wiseflix'
 alias ktg='cd ~/applyai/vemc/ktg-demo'
 alias panel='cd ~/applyai/csg/sgog-panel'
 alias v3='cd ~/applyai/vemc/stakeholder-journey-v3'
@@ -41,3 +42,7 @@ export PATH=$PATH:/opt/cuda/bin
 export HISTCONTROL=ignorespace
 
 source /usr/share/nvm/init-nvm.sh
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
