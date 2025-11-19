@@ -41,15 +41,18 @@ local config = {
 	},
 }
 
-local function highlight_document(bufnr)
-	vim.api.nvim_create_augroup("lsp_document_highlight", { clear = true })
+local function highlight_document(client, bufnr)
+        if not client.server_capabilities or not client.server_capabilities.documentHighlightProvider then
+          return
+        end
+
+        local group = vim.api.nvim_create_augroup("lsp_document_highlight_" .. bufnr, { clear = true })
+
         vim.api.nvim_create_autocmd("CursorHold", {
           group = group,
           buffer = bufnr,
           callback = function()
-            if vim.lsp.buf.document_highlight then
-              vim.lsp.buf.document_highlight()
-            end
+            vim.lsp.buf.document_highlight()
           end,
         })
 
@@ -57,15 +60,13 @@ local function highlight_document(bufnr)
           group = group,
           buffer = bufnr,
           callback = function()
-            if vim.lsp.buf.clear_references then
-              vim.lsp.buf.clear_references()
-            end
+            vim.lsp.buf.clear_references()
           end,
         })
 end
 
 local function format_on_save(bufnr)
-	vim.api.nvim_create_augroup("auto_format", { clear = true })
+        local group = vim.api.nvim_create_augroup("auto_format_" .. bufnr, { clear = true })
         vim.api.nvim_create_autocmd("BufWritePre", {
           group = group,
           buffer = bufnr,
@@ -106,7 +107,7 @@ local function setup()
             client.server_capabilities.documentRangeFormattingProvider = false
 
             format_on_save(bufnr)   -- gofumpt on save
-            highlight_document(bufnr)
+            highlight_document(client, bufnr)
           end,
         })
 
@@ -116,14 +117,14 @@ local function setup()
             client.server_capabilities.documentRangeFormattingProvider = false
 
             format_on_save(bufnr)
-            highlight_document(bufnr)
+            highlight_document(client, bufnr)
           end,
         })
 
         vim.lsp.config("ruff", {
           -- only custom capabilities so far; reuse global capabilities from "*"
-          on_attach = function(_, bufnr)
-            highlight_document(bufnr)
+          on_attach = function(client, bufnr)
+            highlight_document(client, bufnr)
           end,
         })
 
@@ -132,7 +133,7 @@ local function setup()
             client.server_capabilities.documentFormattingProvider = false
             client.server_capabilities.documentRangeFormattingProvider = false
 
-            highlight_document(bufnr)
+            highlight_document(client, bufnr)
           end,
         })
 
