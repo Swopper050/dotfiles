@@ -17,6 +17,7 @@ alias makeenv='python -m venv .env && activate && pip install pyright'
 alias fs='flameshot gui'
 
 # Easy cd's
+alias wiseflix='cd ~/applyai/wiseflix'
 alias ktg='cd ~/applyai/vemc/ktg-demo'
 alias panel='cd ~/applyai/csg/sgog-panel'
 alias v3='cd ~/applyai/vemc/stakeholder-journey-v3'

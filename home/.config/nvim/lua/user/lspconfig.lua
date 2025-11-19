@@ -1,16 +1,16 @@
-local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not ok then
-	vim.notify("cmp_nvim_lsp not found, make sure it is installed.")
-	return
+local ok_cmp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not ok_cmp then
+  vim.notify("cmp_nvim_lsp not found, make sure it is installed.")
+  return
 end
 
-local ok, lspconfig = pcall(require, "lspconfig")
-if not ok then
-	vim.notify("nvim-lsp-config not found, make sure it is installed.")
-	return
+local ok_lspconfig, _ = pcall(require, "lspconfig")
+if not ok_lspconfig then
+  vim.notify("nvim-lsp-config not found, make sure it is installed.")
+  return
 end
 
-local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = cmp_nvim_lsp.default_capabilities()
 
 vim.g.python3_host_prog = "$HOME" .. "/.pyenv/versions/nvim/bin/python3"
 
@@ -25,7 +25,7 @@ local config = {
 	diagnostic = {
 		virtual_text = false,
 		signs = {
-			active = signs,
+			active = true,
 		},
 		underline = true,
 		update_in_insert = false,
@@ -43,78 +43,36 @@ local config = {
 
 local function highlight_document(bufnr)
 	vim.api.nvim_create_augroup("lsp_document_highlight", { clear = true })
-	vim.api.nvim_create_autocmd("CursorHold", {
-		callback = function()
-			vim.lsp.buf.document_highlight()
-		end,
-		buffer = bufnr,
-	})
+        vim.api.nvim_create_autocmd("CursorHold", {
+          group = group,
+          buffer = bufnr,
+          callback = function()
+            if vim.lsp.buf.document_highlight then
+              vim.lsp.buf.document_highlight()
+            end
+          end,
+        })
 
-	vim.api.nvim_create_autocmd("CursorMoved", {
-		callback = function()
-			vim.lsp.buf.clear_references()
-		end,
-		buffer = bufnr,
-	})
+        vim.api.nvim_create_autocmd("CursorMoved", {
+          group = group,
+          buffer = bufnr,
+          callback = function()
+            if vim.lsp.buf.clear_references then
+              vim.lsp.buf.clear_references()
+            end
+          end,
+        })
 end
 
 local function format_on_save(bufnr)
 	vim.api.nvim_create_augroup("auto_format", { clear = true })
-	vim.api.nvim_create_autocmd("BufWritePre", {
-		callback = function()
-			vim.lsp.buf.format(nil, 2000)
-		end,
-		buffer = bufnr,
-	})
-end
-
-
-local function setup_gopls()
-	lspconfig.gopls.setup({
-		capabilities = capabilities,
-		on_attach = function(client, bufnr)
-			-- disable document formatting because null-ls takes care of this.
-			client.server_capabilities.document_formatting = false
-			client.server_capabilities.document_range_formatting = false
-
-                        -- Gofumpt is fast enough so we can format on save.
-			format_on_save(bufnr)
-			highlight_document(bufnr)
-		end,
-	})
-end
-
-local function setup_pyright() 
-    lspconfig.pyright.setup({
-		capabilities = capabilities,
-		on_attach = function(client, bufnr)
-			client.server_capabilities.document_formatting = false
-			client.server_capabilities.document_range_formatting = false
-
-			format_on_save(bufnr)
-			highlight_document(bufnr)
-		end,
-    })
-end
-
-local function setup_ruff()
-    lspconfig.ruff.setup{
-        capabilities = capabilities,
-    }
-end
-
-
-local function setup_ts_ls()
-	lspconfig.ts_ls.setup({
-		capabilities = capabilities,
-		on_attach = function(client, bufnr)
-			-- disable document formatting because null-ls takes care of this.
-			client.server_capabilities.document_formatting = false
-			client.server_capabilities.document_range_formatting = false
-
-			highlight_document(bufnr)
-		end,
-	})
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          group = group,
+          buffer = bufnr,
+          callback = function()
+            vim.lsp.buf.format({ timeout_ms = 2000 })
+          end,
+        })
 end
 
 local function setup_signs() 
@@ -136,10 +94,49 @@ local function setup()
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, config.float)
 
         setup_signs()
-	setup_gopls()
-        setup_pyright()
-        setup_ruff()
-	setup_ts_ls()
+
+        vim.lsp.config("*", {
+            capabilities = capabilities,
+        })
+
+        vim.lsp.config("gopls", {
+          on_attach = function(client, bufnr)
+            -- Disable formatting (null-ls / conform.nvim / etc handle it)
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+
+            format_on_save(bufnr)   -- gofumpt on save
+            highlight_document(bufnr)
+          end,
+        })
+
+        vim.lsp.config("pyright", {
+          on_attach = function(client, bufnr)
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+
+            format_on_save(bufnr)
+            highlight_document(bufnr)
+          end,
+        })
+
+        vim.lsp.config("ruff", {
+          -- only custom capabilities so far; reuse global capabilities from "*"
+          on_attach = function(_, bufnr)
+            highlight_document(bufnr)
+          end,
+        })
+
+        vim.lsp.config("ts_ls", {
+          on_attach = function(client, bufnr)
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+
+            highlight_document(bufnr)
+          end,
+        })
+
+        vim.lsp.enable({ "gopls", "pyright", "ruff", "ts_ls" })
 end
 
 return {
